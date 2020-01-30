@@ -51,4 +51,4 @@ any.login().then(async () => {
 
 ### 📖 Docs
 
-[Documentation]()
+[Documentation](https://codetheweb.github.io/anylist/)
