@@ -11,12 +11,13 @@
     "client"
   ],
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "lib/index.js",
   "license": "MIT",
   "author": "Max Isom <hi@maxisom.me> (https://maxisom.me/)",
   "scripts": {
     "test": "xo",
-    "lint-fix": "xo --fix"
+    "lint-fix": "xo --fix",
+    "document": "documentation build lib/index.js -f html -o docs"
   },
   "dependencies": {
     "form-data": "^3.0.0",
@@ -30,13 +31,22 @@
     "ws": "^7.2.1"
   },
   "devDependencies": {
+    "documentation": "^12.1.4",
     "husky": "^4.2.1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test"
+      "pre-commit": "yarn test && yarn run document"
     }
   },
+  "xo": {
+    "ignores": [
+      "docs"
+    ]
+  },
+  "files": [
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/codetheweb/anylist.git"
