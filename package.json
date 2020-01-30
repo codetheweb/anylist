@@ -1,9 +1,23 @@
 {
   "name": "anylist",
+  "description": "📋 a wrapper for AnyList's API (unoffical, reverse engineered)",
+  "keywords": [
+    "📋",
+    "anylist",
+    "grocery",
+    "list",
+    "api",
+    "wrapper",
+    "client"
+  ],
   "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
   "author": "Max Isom <hi@maxisom.me> (https://maxisom.me/)",
+  "scripts": {
+    "test": "xo",
+    "lint-fix": "xo --fix"
+  },
   "dependencies": {
     "form-data": "^3.0.0",
     "global-tunnel": "^1.2.0",
@@ -14,5 +28,21 @@
     "tunnel": "^0.0.6",
     "uuid": "^3.4.0",
     "ws": "^7.2.1"
-  }
+  },
+  "devDependencies": {
+    "husky": "^4.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codetheweb/anylist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codetheweb/anylist/issues"
+  },
+  "homepage": "https://github.com/codetheweb/anylist"
 }
