@@ -30,7 +30,8 @@
   },
   "devDependencies": {
     "documentation": "^12.1.4",
-    "husky": "^4.2.1"
+    "husky": "^4.2.1",
+    "xo": "^0.28.1"
   },
   "husky": {
     "hooks": {
