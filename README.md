@@ -1,5 +1,7 @@
 # 📋 AnyList
 
+![node-current](https://img.shields.io/node/v/anylist)
+
 ## a wrapper for AnyList's API (unoffical, reverse engineered)
 
 ### Install
