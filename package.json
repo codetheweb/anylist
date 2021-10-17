@@ -10,7 +10,7 @@
     "wrapper",
     "client"
   ],
-  "version": "0.1.3",
+  "version": "0.2.0",
   "main": "lib/index.js",
   "license": "MIT",
   "author": "Max Isom <hi@maxisom.me> (https://maxisom.me/)",
