@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "form-data": "^3.0.0",
-    "got": "^10.3.0",
+    "got": "^11.8.5",
     "protobufjs": "5.0.3",
     "reconnecting-websocket": "^4.2.0",
     "tough-cookie": "^3.0.1",
