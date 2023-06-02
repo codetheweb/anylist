@@ -8,7 +8,8 @@
     "list",
     "api",
     "wrapper",
-    "client"
+    "client",
+    "recipe"
   ],
   "version": "0.2.0",
   "main": "lib/index.js",
