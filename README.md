@@ -45,6 +45,63 @@ any.login().then(async () => {
 });
 ```
 
+### Getting Started with Recipes
+
+```javascript
+const AnyList = require('anylist');
+
+const any = new AnyList({email: 'hi@here.com', password: 'password'});
+
+any.login().then(async () => {
+    const recipeName = 'Congee recipe';
+    const testRecipe = await any.createRecipe(
+        {
+            name: recipeName,
+            note: 'this is a test note',
+            preparationSteps: ['# heading 1', 'this is preparation step 1'],
+            servings: '2 servings as main dish',
+            sourceName: 'serious eats',
+            sourceUrl: 'https://seriouseats.com',
+            scaleFactor: 1,
+            rating: 5,
+            ingredients: [{
+                rawIngredient: '1 garlic, chopped',
+                name: 'garlic',
+                quantity: '1',
+                note: 'chopped'
+            }],
+            nutritionalInfo: 'this is nutritional info',
+            cookTime: 5 * 60, // seconds
+            prepTime: 5 * 60, // seconds
+            creationTimestamp: Date.now() / 1000,
+            timestamp: Date.now() / 1000
+        }
+    );
+
+
+    // Save test recipe
+    await testRecipe.save();
+    
+    const collection = any.createRecipeCollection({ name: 'ONLINE RECIPES' })
+
+    await collection.save();
+    
+    await collection.addRecipe(testRecipe.identifier);
+
+    await collection.removeRecipe(testRecipe.identifier);
+    
+    // clean up / delete test recipe collection
+    await collection.delete();
+
+    // cleanup / delete test recipe
+    await testRecipe.delete(); 
+
+
+    any.teardown();
+});
+```
+
+
 ### Notes/Tips
 
 - There is **much** more functionality in the AnyList API that is not captured in this package, I just implemented the functions that I would be using. If there is functionality missing that you want, please open a PR and I'm happy to merge it in.
