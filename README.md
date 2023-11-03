@@ -102,6 +102,10 @@ any.login().then(async () => {
 ```
 
 
+### Persistent Credentials Storage
+By default, the client ID and authentications tokens are encrypted with AES-256 encryption using your account password and then stored to disk. The default storage location is the `.anylist_credentials` file in the current working directory. If you wish to change the storage location, set the `credentialsFile` parameter of the `AnyList` constructor to the desired path. If you wish to disable persistent credentials storage, set the `credentialsFile` parameter to `null`.
+
+
 ### Notes/Tips
 
 - There is **much** more functionality in the AnyList API that is not captured in this package, I just implemented the functions that I would be using. If there is functionality missing that you want, please open a PR and I'm happy to merge it in.
