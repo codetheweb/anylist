@@ -81,20 +81,20 @@ any.login().then(async () => {
 
     // Save test recipe
     await testRecipe.save();
-    
+
     const collection = any.createRecipeCollection({ name: 'ONLINE RECIPES' })
 
     await collection.save();
-    
+
     await collection.addRecipe(testRecipe.identifier);
 
     await collection.removeRecipe(testRecipe.identifier);
-    
+
     // clean up / delete test recipe collection
     await collection.delete();
 
     // cleanup / delete test recipe
-    await testRecipe.delete(); 
+    await testRecipe.delete();
 
 
     any.teardown();
@@ -103,7 +103,7 @@ any.login().then(async () => {
 
 
 ### Persistent Credentials Storage
-By default, the client ID and authentications tokens are encrypted with AES-256 encryption using your account password and then stored to disk. The default storage location is the `.anylist_credentials` file in the current working directory. If you wish to change the storage location, set the `credentialsFile` parameter of the `AnyList` constructor to the desired path. If you wish to disable persistent credentials storage, set the `credentialsFile` parameter to `null`.
+By default, the client ID and authentications tokens are encrypted with AES-256 encryption using your account password and then stored to disk. The default storage location is the `.anylist_credentials` file in the user home directory. If you wish to change the storage location, set the `credentialsFile` parameter of the `AnyList` constructor to the desired path. If you wish to disable persistent credentials storage, set the `credentialsFile` parameter to `null`.
 
 
 ### Notes/Tips
