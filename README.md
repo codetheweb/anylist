@@ -29,7 +29,7 @@ any.login().then(async () => {
 
   let chips = any.createItem({name: 'Chips'});
 
-  chips = await walmart.addItem(chips)
+  chips = await walmart.addItem(chips);
 
   // Check off added item
   chips.checked = true;
@@ -40,6 +40,11 @@ any.login().then(async () => {
 
   // Delete item
   await walmart.removeItem(chips);
+
+  // Add a new calendar event
+  const calEvent = any.createEvent({title: "Do Laundry"});
+
+  await calEvent.save();
 
   any.teardown();
 });
